@@ -4,7 +4,7 @@
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "start": "webpack serve --open"
   },
@@ -28,6 +28,7 @@
     "eslint-plugin-import": "^2.23.4",
     "hint": "^6.1.4",
     "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.0.6",
     "style-loader": "^3.1.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
@@ -37,6 +38,5 @@
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   },
-  "main": "webpack.config.js",
-  "dependencies": {}
+  "main": "webpack.config.js"
 }
