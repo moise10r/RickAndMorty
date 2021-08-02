@@ -1,0 +1,44 @@
+html {
+  font-family: 'Quicksand', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  width: 100%;
+}
+
+header>div {
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 100px;
+  width: 200px;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 100%;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:first-child::after {
+  content: ' ';
+  width: 100%;
+  height: 1px;
+  display: block;
+  background-color: black;
+  margin-top: 2px;
+}
