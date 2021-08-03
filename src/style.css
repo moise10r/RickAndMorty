@@ -165,6 +165,10 @@ nav ul li:hover::after {
   color: var(--text-color);
 }
 
+.fas {
+  cursor: pointer;
+}
+
 .comment,
 .reserv {
   width: 100%;
