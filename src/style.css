@@ -184,8 +184,31 @@ nav ul li:hover::after {
   width: 100%;
   font-size: 1.1rem;
   color: var(--text-color);
-  background-color: var(--primaryColor);
+  background-color: #d19592;
+  background-image: linear-gradient(315deg, #d19592 0%, #c81f70 74%);
   font-weight: 400;
+  position: relative;
+  z-index: 1;
+  opacity: 0.99;
+}
+
+.btn::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  background-color: #d19592;
+  background-image: linear-gradient(315deg, #d19592 0%, #c81f70 74%);
+  transition: transform 700ms;
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: -1;
+}
+
+.btn:hover:before {
+  transform: scaleX(1);
 }
 
 @media screen and (min-width: 920px) {
