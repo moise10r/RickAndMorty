@@ -207,7 +207,7 @@ nav ul li:hover::after {
   z-index: -1;
 }
 
-.btn:hover:before {
+.btn:hover::before {
   transform: scaleX(1);
 }
 
