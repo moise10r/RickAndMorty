@@ -9,7 +9,7 @@ img.src = logo;
 logoWrapper.append(img);
 
 let items = [];
-const render = async() => {
+const render = async () => {
   items = await getCharacters();
   const list = document.querySelector('.items-list');
   list.innerHTML = '';
@@ -34,12 +34,11 @@ const render = async() => {
     <div class="reserv"><button class="btn">Reservation</button></div>`;
     list.appendChild(li);
   });
-  [...document.querySelectorAll('.btn')].forEach(elem => {
+  [...document.querySelectorAll('.btn')].forEach((elem) => {
     elem.addEventListener('click', () => {
-      // console.log(items[elem.id - 1]);
       document.querySelector('main').append(createPopup(items[elem.id - 1]));
-    })
-  })
+    });
+  });
 };
 
 render();

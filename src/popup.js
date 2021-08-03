@@ -1,8 +1,9 @@
+/* eslint-disable import/prefer-default-export */
 const createElem = (tag, cl) => {
   const elem = document.createElement(tag);
   elem.classList.add(...cl);
   return elem;
-}
+};
 
 const createImageWrapper = (img) => {
   const imageWrapper = createElem('article', ['image-wrapper', 'flex', 'flex-row']);
@@ -15,7 +16,7 @@ close
 </span>
       </div>`;
   return imageWrapper;
-}
+};
 
 const createCharInfoWrapper = (info) => {
   const elem = createElem('article', ['char-info-wrapper']);
@@ -31,21 +32,19 @@ const createCharInfoWrapper = (info) => {
         <li>Origin: ${info.origin.name}</li>
       </ul>`;
   return elem;
-}
+};
 
 export const createPopup = (content) => {
-  console.log(content);
   const wrapper = createElem('section', ['popup', 'flex', 'flex-col']);
   wrapper.append(
     createImageWrapper(content.image),
-    createCharInfoWrapper(content)
+    createCharInfoWrapper(content),
   );
 
   wrapper.querySelector('.close').addEventListener('click', () => {
-    let main = document.querySelector('main');
+    const main = document.querySelector('main');
     main.removeChild(main.lastChild);
-  })
+  });
 
   return wrapper;
-
-}
+};
