@@ -9,7 +9,7 @@ const img = document.createElement('img');
 img.src = logo;
 logoWrapper.append(img);
 
-async function test() {
+async function render() {
   const like = await postLike({
     item_id: 'Moise',
   });
@@ -27,4 +27,4 @@ async function test() {
     getCom,
   });
 }
-test();
+render();
