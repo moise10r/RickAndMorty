@@ -14,6 +14,7 @@ const render = async () => {
     const li = document.createElement('li');
     li.classList.add('item');
     li.innerHTML = `  <div class="img-wrapper">
+    <div class="img-bg"></div>
     <img src='${item.image}' alt="Img">
   </div>
     <div class="like-content flex">
