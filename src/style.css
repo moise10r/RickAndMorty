@@ -135,17 +135,9 @@ nav ul li:hover::after {
 .item .img-wrapper {
   width: 100%;
   text-align: center;
-  position: relative;
-}
-
-.img-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: var(--primaryColor);
-  opacity: 0.3;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  overflow: hidden;
 }
 
 .item .img-wrapper img {
@@ -207,7 +199,7 @@ nav ul li:hover::after {
   z-index: -1;
 }
 
-.btn:hover::before {
+.btn:hover:before {
   transform: scaleX(1);
 }
 
