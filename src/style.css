@@ -227,6 +227,7 @@ nav ul li:hover::after {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
+  
   .comment,
   .reserv,
   .like-content {
@@ -255,7 +256,7 @@ nav ul li:hover::after {
   flex-wrap: wrap;
 }
 
-.char-info-ul>li {
+.char-info-ul > li {
   width: 50%;
   padding-bottom: 10px;
 }
@@ -265,7 +266,7 @@ nav ul li:hover::after {
   padding: 20px 0;
 }
 
-.char-info-ul>li:nth-child(even) {
+.char-info-ul > li:nth-child(even) {
   text-align: right;
 }
 
