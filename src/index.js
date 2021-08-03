@@ -1,7 +1,10 @@
 import './style.css';
 import logo from './assets/R&M-logo.png';
 import {
-  getCharacters, postComment, getComment, postLike,
+  getCharacters,
+  postComment,
+  getComment,
+  postLike,
 } from './controllers';
 
 const logoWrapper = document.querySelector('.logo');
