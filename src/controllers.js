@@ -11,11 +11,16 @@ export const getCharacters = async () => {
 };
 
 export const getComment = async () => {
-  const result = await Api.get(involUrl, `${appId}/comments`);
+  const result = await Api.get(involUrl, `apps/${appId}/comments?item_id=item1`);
+  return result;
+};
+
+export const postLike = async (body) => {
+  const result = await Api.post(involUrl, `apps/${appId}/likes`, JSON.stringify(body));
   return result;
 };
 
 export const postComment = async (body) => {
-  const result = await Api.post(involUrl, `apps/${appId}/likes`, JSON.stringify(body));
+  const result = await Api.post(involUrl, `apps/${appId}/comments`, JSON.stringify(body));
   return result;
 };
