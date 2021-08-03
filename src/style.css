@@ -227,7 +227,7 @@ nav ul li:hover::after {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
-  
+
   .comment,
   .reserv,
   .like-content {
