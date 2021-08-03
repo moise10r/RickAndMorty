@@ -113,10 +113,10 @@ nav ul li:hover::after {
 
 #main-section {
   width: 100%;
-  margin: 10rem 0;
 }
 
 .main-wrapper {
+  padding: 10rem 0;
   width: 100%;
 }
 
@@ -182,6 +182,7 @@ nav ul li:hover::after {
   position: relative;
   z-index: 1;
   opacity: 0.99;
+  cursor: pointer;
 }
 
 .btn::before {

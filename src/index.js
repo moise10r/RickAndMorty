@@ -6,8 +6,10 @@ const logoWrapper = document.querySelector('.logo');
 const img = document.createElement('img');
 img.src = logo;
 logoWrapper.append(img);
+
+let items = [];
 const render = async () => {
-  const items = await getCharacters();
+  items = await getCharacters();
   const list = document.querySelector('.items-list');
   list.innerHTML = '';
   items.forEach((item) => {
@@ -27,7 +29,7 @@ const render = async () => {
         </span>
       </div>
     </div>
-    <div class="comment"><button class="btn">Comment</button></div>
+    <div class="comment"><button id='${item.id}' class="btn">Comment</button></div>
     <div class="reserv"><button class="btn">Reservation</button></div>`;
     list.appendChild(li);
   });
