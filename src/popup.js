@@ -9,9 +9,11 @@ const createImageWrapper = (img) => {
   imageWrapper.innerHTML = `<div class='image'>
         <img src="${img}" alt="image of an character">
       </div>
-      <dv class='close-btn'>
-        X
-      </dv>`;
+      <div class='close-btn'>
+        <span class="material-icons close">
+close
+</span>
+      </div>`;
   return imageWrapper;
 }
 
@@ -26,6 +28,7 @@ const createCharInfoWrapper = (info) => {
         <li>Status: ${info.status}</li>
         <li>Created: ${info.created}</li>
         <li>Location: ${info.location.name}</li>
+        <li>Origin: ${info.origin.name}</li>
       </ul>`;
   return elem;
 }
@@ -37,6 +40,11 @@ export const createPopup = (content) => {
     createImageWrapper(content.image),
     createCharInfoWrapper(content)
   );
+
+  wrapper.querySelector('.close').addEventListener('click', () => {
+    let main = document.querySelector('main');
+    main.removeChild(main.lastChild);
+  })
 
   return wrapper;
 
