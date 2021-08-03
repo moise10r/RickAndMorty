@@ -1,7 +1,9 @@
 import './style.css';
 import logo from './assets/R&M-logo.png';
 import { getCharacters } from './controllers';
+
 import { createPopup } from './popup';
+
 
 const logoWrapper = document.querySelector('.logo');
 const img = document.createElement('img');
@@ -9,7 +11,9 @@ img.src = logo;
 logoWrapper.append(img);
 
 let items = [];
+
 const render = async() => {
+
   items = await getCharacters();
   const list = document.querySelector('.items-list');
   list.innerHTML = '';
@@ -40,6 +44,7 @@ const render = async() => {
       document.querySelector('main').append(createPopup(items[elem.id - 1]));
     })
   })
+
 };
 
 render();
