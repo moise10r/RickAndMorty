@@ -1,6 +1,7 @@
 import './style.css';
 import logo from './assets/R&M-logo.png';
 import { getCharacters } from './controllers';
+import { createPopup } from './popup';
 
 const logoWrapper = document.querySelector('.logo');
 const img = document.createElement('img');
@@ -35,7 +36,8 @@ const render = async() => {
   });
   [...document.querySelectorAll('.btn')].forEach(elem => {
     elem.addEventListener('click', () => {
-      console.log(items[elem.id - 1]);
+      // console.log(items[elem.id - 1]);
+      document.querySelector('main').append(createPopup(items[elem.id - 1]));
     })
   })
 };
