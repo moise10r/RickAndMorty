@@ -7,7 +7,7 @@ const createElem = (tag, cl) => {
   return elem;
 };
 
-const wrapper = createElem('section', ['popup', 'flex', 'flex-col']); // popup wrapper
+const wrapper = createElem('section', ['popup']); // popup wrapper
 let comments = []; // comments array
 
 const mainContainer = createElem('div', ['main-popup', 'flex', 'flex-col']);
