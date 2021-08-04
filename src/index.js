@@ -16,6 +16,7 @@ const incrementLike = (likesBtn) => {
       await postLike({
         item_id: btn.dataset.name,
       });
+      location.reload();
     });
   });
 };
