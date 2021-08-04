@@ -43,14 +43,14 @@ const render = async (renderLike) => {
         </span>
       </div>
     </div>
-    <div class="comment"><button id='${item.id}' class="btn">Comment</button></div>
+    <div class="comment"><button id='${item.id}' class="comment-btn btn">Comment</button></div>
     <div class="reserv"><button class="btn">Reservation</button></div>`;
     list.appendChild(li);
   });
   incrementLike(document.querySelectorAll('.fas'), renderLike);
-  [...document.querySelectorAll('.btn')].forEach((elem) => {
-    elem.addEventListener('click', () => {
-      document.querySelector('main').append(createPopup(items[elem.id - 1]));
+  [...document.querySelectorAll('.comment-btn')].forEach((elem) => {
+    elem.addEventListener('click', async () => {
+    document.querySelector('main').append(await createPopup(items[elem.id - 1], elem.id - 1));
     });
   });
 };
