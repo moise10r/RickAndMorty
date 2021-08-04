@@ -1,6 +1,6 @@
 import './style.css';
 import logo from './assets/R&M-logo.png';
-import { getCharacters } from './controllers';
+import { getCharacters, getLikes } from './controllers';
 import { createPopup } from './popup';
 
 const logoWrapper = document.querySelector('.logo');
@@ -43,3 +43,12 @@ const render = async () => {
 };
 
 render();
+// getLikes().then((res) => {
+//   console.log(res);
+// });
+
+// let likes = [];
+window.addEventListener('load', async () => {
+  const likes = [...await getLikes()];
+  console.log(likes);
+});
