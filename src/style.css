@@ -139,7 +139,7 @@ nav ul li::after {
 nav ul li:first-child:after {
   display: block;
 }
-nav ul li:hover::after {
+nav ul li:n:hover::after {
   display: block;
 }
 
@@ -214,6 +214,16 @@ nav ul li:hover::after {
   margin-top: 1rem;
 }
 
+.comment-btn {
+  border-bottom-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.reserv-btn {
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
 .btn {
   padding: 1rem 0;
   width: 100%;
@@ -226,24 +236,48 @@ nav ul li:hover::after {
   z-index: 1;
   opacity: 0.99;
   cursor: pointer;
+  overflow: hidden;
 }
 
-.btn::before {
+.comment-btn::before {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   content: "";
-  background-color: #d19592;
-  background-image: linear-gradient(315deg, #d19592 0%, #c81f70 74%);
+  background-color: #f57f79;
+  border-bottom-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  background-image: linear-gradient(315deg, #f57f79 0%, #8b040d 74%);
   transition: transform 700ms;
   transform-origin: left;
   transform: scaleX(0);
   z-index: -1;
 }
 
-.btn:hover::before {
+.comment-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.reserv-btn::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  background-color: #f57f79;
+  background-image: linear-gradient(315deg, #f57f79 0%, #8b040d 74%);
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  transition: transform 700ms;
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: -1;
+}
+
+.reserv-btn:hover::before {
   transform: scaleX(1);
 }
 
@@ -271,10 +305,11 @@ nav ul li:hover::after {
   color: var(--text-color);
   top: 77px;
   left: 0;
-  width: 100%;
+  width: 90%;
   height: 100%;
   z-index: 3123;
-  background-color: #2b2b31c1;
+  background-color: red;
+  justify-self: center;
   padding: 0 20%;
   overflow-y: scroll;
   padding-bottom: 100px;

@@ -10,6 +10,8 @@ const createElem = (tag, cl) => {
 const wrapper = createElem('section', ['popup', 'flex', 'flex-col']); // popup wrapper
 let comments = []; // comments array
 
+const mainContainer = createElem('div', ['main-popup', 'flex', 'flex-col']);
+
 const updateCommentCounts = () => {
   wrapper.querySelector('.comments-count').innerHTML = comments.length;
 };
@@ -138,14 +140,15 @@ const createAddCommentSection = () => {
 };
 
 export const createPopup = async (content, id) => {
+  mainContainer.innerHTML = '';
   wrapper.innerHTML = '';
-  wrapper.append(
+  mainContainer.append(
     createImageWrapper(content.image),
     createCharInfoWrapper(content),
     await createCommentsWrapper(id),
     createAddCommentSection(),
   );
-
+  wrapper.append(mainContainer);
   setCloseEvent(wrapper);
   setAddComentEvent(content, id);
 
