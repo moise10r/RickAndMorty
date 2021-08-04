@@ -47,10 +47,10 @@ const render = async (renderLike) => {
     <div class="reserv"><button class="btn">Reservation</button></div>`;
     list.appendChild(li);
   });
-  incrementLike(document.querySelectorAll('.fas'), renderLike);
+  incrementLike(document.querySelectorAll('.fas'));
   [...document.querySelectorAll('.comment-btn')].forEach((elem) => {
     elem.addEventListener('click', async () => {
-    document.querySelector('main').append(await createPopup(items[elem.id - 1], elem.id - 1));
+      document.querySelector('main').append(await createPopup(items[elem.id - 1], elem.id - 1));
     });
   });
 };
