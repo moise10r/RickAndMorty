@@ -50,7 +50,7 @@ const render = async (renderLike) => {
   incrementLike(document.querySelectorAll('.fas'));
   [...document.querySelectorAll('.comment-btn')].forEach((elem) => {
     elem.addEventListener('click', async () => {
-      document.querySelector('main').append(await createPopup(items[elem.id - 1], elem.id - 1));
+      await createPopup(items[elem.id - 1], elem.id - 1);
     });
   });
 };
