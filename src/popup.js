@@ -7,6 +7,20 @@ const createElem = (tag, cl) => {
   return elem;
 };
 
+const wrapper = createElem('section', ['popup', 'flex', 'flex-col']); // popup wrapper
+let comments = []; // comments array
+
+const removePopup = () => {
+  const main = document.querySelector('main');
+  main.removeChild(main.lastChild);
+};
+
+const setCloseEvent = (element) => {
+  element.querySelector('.close').addEventListener('click', () => {
+    removePopup();
+  });
+};
+
 const createImageWrapper = (img) => {
   const imageWrapper = createElem('article', ['image-wrapper', 'flex', 'flex-row']);
   imageWrapper.innerHTML = `<div class='image'>
@@ -37,13 +51,14 @@ const createCharInfoWrapper = (info) => {
 };
 
 const createCommentsWrapper = async (id) => {
-  const comments = await getComment(id);
-  const elem = createElem('article', ['flex', 'flex-col']);
+  comments = await getComment(id);
+  if (!Array.isArray(comments)) comments = [];
+  const elem = createElem('article', ['flex', 'flex-col', 'comment-wrapper']);
   elem.innerHTML = `<div class='text-center padding-20'>
-        <h3>Comments (<span class='comments-count'>${comments.length}</span>)</h3>
+        <h3>Comments (<span class='comments-count'>0</span>)</h3>
       </div>`;
 
-  const ul = createElem('ul', ['flex', 'flex-col']);
+  const ul = createElem('ul', ['flex', 'flex-col', 'comments-ul']);
   comments.forEach((comment) => {
     const li = document.createElement('li');
     li.innerHTML = `<span class='comment-date'>${comment.creation_date}</span>
@@ -56,17 +71,13 @@ const createCommentsWrapper = async (id) => {
 };
 
 export const createPopup = async (content, id) => {
-  const wrapper = createElem('section', ['popup', 'flex', 'flex-col']);
+  wrapper.innerHTML = '';
   wrapper.append(
     createImageWrapper(content.image),
     createCharInfoWrapper(content),
     await createCommentsWrapper(id),
   );
 
-  wrapper.querySelector('.close').addEventListener('click', () => {
-    const main = document.querySelector('main');
-    main.removeChild(main.lastChild);
-  });
-
-  return wrapper;
+  setCloseEvent(wrapper);
+  document.querySelector('main').append(wrapper);
 };
