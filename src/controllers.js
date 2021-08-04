@@ -10,7 +10,7 @@ export const getCharacters = async () => {
   return result;
 };
 
-export const getComment = async (id) => {
+export const getComment = async () => {
   const result = await Api.get(involUrl, `apps/${appId}/comments?item_id=item1`);
   return result;
 };
