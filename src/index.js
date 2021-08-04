@@ -36,8 +36,8 @@ const render = async () => {
     list.appendChild(li);
   });
   [...document.querySelectorAll('.btn')].forEach((elem) => {
-    elem.addEventListener('click', () => {
-      document.querySelector('main').append(createPopup(items[elem.id - 1]));
+    elem.addEventListener('click', async () => {
+      document.querySelector('main').append(await createPopup(items[elem.id - 1], elem.id - 1));
     });
   });
 };
