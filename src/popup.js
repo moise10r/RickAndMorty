@@ -10,7 +10,6 @@ const createElem = (tag, cl) => {
 const wrapper = createElem('section', ['popup', 'flex', 'flex-col']); // popup wrapper
 let comments = []; // comments array
 
-
 const removePopup = () => {
   const main = document.querySelector('main');
   main.removeChild(main.lastChild);
