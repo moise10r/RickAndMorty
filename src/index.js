@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import './style.css';
 import logo from './assets/R&M-logo.png';
 import { getCharacters, getLikes } from './controllers';
@@ -10,11 +11,22 @@ logoWrapper.append(img);
 
 let items = [];
 
+const renderLike = async (item) => {
+  const likes = [...await getLikes()];
+  let count = 0;
+  likes.forEach((like) => {
+    if (like.item_id === item.name) {
+      count = like.likes;
+    }
+  });
+  return count;
+};
+
 const render = async () => {
   items = await getCharacters();
   const list = document.querySelector('.items-list');
   list.innerHTML = '';
-  items.forEach((item) => {
+  items.forEach(async (item) => {
     const li = document.createElement('li');
     li.classList.add('item');
     li.innerHTML = `  <div class="img-wrapper">
@@ -27,7 +39,7 @@ const render = async () => {
       <span><i class="fas fa-heart"></i></span>
       <span>
           <span>Like</span>
-          <span>2</span>
+          <span>${await renderLike(item)}</span>
         </span>
       </div>
     </div>
@@ -43,12 +55,3 @@ const render = async () => {
 };
 
 render();
-// getLikes().then((res) => {
-//   console.log(res);
-// });
-
-// let likes = [];
-window.addEventListener('load', async () => {
-  const likes = [...await getLikes()];
-  console.log(likes);
-});
