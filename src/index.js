@@ -12,6 +12,11 @@ const img = document.createElement('img');
 img.src = logo;
 logoWrapper.append(img);
 
+const itemCounter = (characters) => {
+  const count = document.querySelector('#char-count');
+  count.innerHTML = `(${characters.length})`;
+};
+
 const incrementLike = (likesBtn) => {
   likesBtn.forEach((btn) => {
     btn.addEventListener('click', async () => {
@@ -72,4 +77,5 @@ window.addEventListener('load', async () => {
   render(renderLike);
   const characters = await getCharacters();
   count.innerHTML = `(${itemCounter(characters)})`;
+
 });
