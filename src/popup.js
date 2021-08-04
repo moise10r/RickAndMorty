@@ -10,6 +10,10 @@ const createElem = (tag, cl) => {
 const wrapper = createElem('section', ['popup', 'flex', 'flex-col']); // popup wrapper
 let comments = []; // comments array
 
+const updateCommentCounts = () => {
+  wrapper.querySelector('.comments-count').innerHTML = comments.length;
+};
+
 const removePopup = () => {
   const main = document.querySelector('main');
   main.removeChild(main.lastChild);
@@ -49,6 +53,7 @@ const addComment = async (content, id) => {
   if (name && comment) {
     comments.push({ item_id: id, username: name, comment });
     updateComments();
+    updateCommentCounts();
     nameInp.value = '';
     commentInp.value = '';
     postComment({ item_id: id, username: name, comment });
@@ -95,7 +100,7 @@ const createCommentsWrapper = async (id) => {
   if (!Array.isArray(comments)) comments = [];
   const elem = createElem('article', ['flex', 'flex-col', 'comment-wrapper']);
   elem.innerHTML = `<div class='text-center padding-20'>
-        <h3>Comments (<span class='comments-count'>0</span>)</h3>
+        <h3>Comments (<span class='comments-count'>${comments.length}</span>)</h3>
       </div>`;
 
   const ul = createElem('ul', ['flex', 'flex-col', 'comments-ul']);
