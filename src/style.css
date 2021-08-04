@@ -183,6 +183,11 @@ nav ul li:n:hover::after {
   max-width: 100%;
   width: 100%;
   height: 100%;
+  transition: 0.75s;
+}
+
+.item .img-wrapper img:hover {
+  transform: scale(1.1);
 }
 
 .like-content {
@@ -412,10 +417,10 @@ nav ul li:n:hover::after {
   right: 1rem;
 }
 
-/* .material-icons {
-  font-size: 60px;
+.material-icons {
+  font-size: 3rem;
   cursor: pointer;
-} */
+}
 
 /*
     Add a comment section
