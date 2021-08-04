@@ -5,13 +5,12 @@ import './style.css';
 import logo from './assets/R&M-logo.png';
 import { getCharacters, getLikes, postLike } from './controllers';
 import { createPopup } from './popup';
+import itemCounter from './utils';
 
 const logoWrapper = document.querySelector('.logo');
 const img = document.createElement('img');
 img.src = logo;
 logoWrapper.append(img);
-
-const itemCounter = (characters) => characters.length;
 
 const incrementLike = (likesBtn) => {
   likesBtn.forEach((btn) => {
