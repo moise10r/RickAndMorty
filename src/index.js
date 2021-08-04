@@ -46,7 +46,7 @@ const render = async (renderLike) => {
       </div>
     </div>
     <div class="comment"><button id='${item.id}' class="comment-btn btn">Comment</button></div>
-    <div class="reserv"><button class="btn">Reservation</button></div>`;
+    <div class="reserv"><button class="reserv-btn btn">Reservation</button></div>`;
     list.appendChild(li);
   });
   incrementLike(document.querySelectorAll('.fas'));

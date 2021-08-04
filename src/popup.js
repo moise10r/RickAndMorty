@@ -7,8 +7,10 @@ const createElem = (tag, cl) => {
   return elem;
 };
 
-const wrapper = createElem('section', ['popup', 'flex', 'flex-col']); // popup wrapper
+const wrapper = createElem('section', ['popup']); // popup wrapper
 let comments = []; // comments array
+
+const mainContainer = createElem('div', ['main-popup', 'flex', 'flex-col']);
 
 const updateCommentCounts = () => {
   wrapper.querySelector('.comments-count').innerHTML = comments.length;
@@ -117,35 +119,35 @@ const createCommentsWrapper = async (id) => {
 
 const createAddCommentSection = () => {
   const wrap = createElem('section', ['add-comment-section', 'flex', 'flex-col']);
-  wrap.innerHTML = `<article>
+  wrap.innerHTML = `<div class="container">
           <h3 class='text-center'>Add a comment</h3>
-        </article>
+        </div>
 
-        <article>
+        <div class="container">
           <input type='text' placeholder='Your name' class='name-inp'>
-        </article>
+        </div>
 
-        <article>
-          <textarea name="comment" id="comment" cols="30" rows="10" placeholder='Your comment here' class='comment-inp'>
-
+        <div class="container">
+          <textarea name="comment"  id="comment" cols="30" rows="10" placeholder='Your comment here' class='comment-inp'>
           </textarea>
-        </article>
+        </div>
 
-        <article>
+        <div class="container">
           <input type="button" value='Comment' class='add-comment-btn btn'>
-        </article>`;
+        </div>`;
   return wrap;
 };
 
 export const createPopup = async (content, id) => {
+  mainContainer.innerHTML = '';
   wrapper.innerHTML = '';
-  wrapper.append(
+  mainContainer.append(
     createImageWrapper(content.image),
     createCharInfoWrapper(content),
     await createCommentsWrapper(id),
     createAddCommentSection(),
   );
-
+  wrapper.append(mainContainer);
   setCloseEvent(wrapper);
   setAddComentEvent(content, id);
 
