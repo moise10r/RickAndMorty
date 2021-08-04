@@ -129,7 +129,6 @@ const createAddCommentSection = () => {
 
         <div class="container">
           <textarea name="comment"  id="comment" cols="30" rows="10" placeholder='Your comment here' class='comment-inp'>
-
           </textarea>
         </div>
 
