@@ -136,6 +136,9 @@ nav ul li::after {
   margin-top: 3px;
 }
 
+nav ul li:first-child:after {
+  display: block;
+}
 nav ul li:hover::after {
   display: block;
 }
