@@ -1,6 +1,6 @@
 import itemCounter from '../src/utils';
 
-it('should return a lenght greather than 0', () => {
+it('should return a length greather than 0', () => {
   const items = [
     {
       id: 1,
