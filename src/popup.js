@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { getComment, postComment } from './controllers';
+import { getComment} from './controllers';
 
 const createElem = (tag, cl) => {
   const elem = document.createElement(tag);
@@ -9,10 +9,6 @@ const createElem = (tag, cl) => {
 
 const wrapper = createElem('section', ['popup', 'flex', 'flex-col']); // popup wrapper
 let comments = []; // comments array
-
-const updateCommentCounts = () => {
-  wrapper.querySelector('.comments-count').innerHTML = comments.length;
-};
 
 const removePopup = () => {
   const main = document.querySelector('main');
@@ -24,17 +20,6 @@ const setCloseEvent = (element) => {
     removePopup();
   });
 };
-
-const createDate = () => {
-  const d = new Date();
-  const day = (`0${d.getDate()}`).slice(-2);
-  const month = (`0${d.getMonth() + 1}`).slice(-2);
-  const year = d.getFullYear();
-
-  return `${year}-${month}-${day}`;
-};
-
-
 
 const createImageWrapper = (img) => {
   const imageWrapper = createElem('article', ['image-wrapper', 'flex', 'flex-row']);
