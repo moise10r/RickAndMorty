@@ -1,4 +1,4 @@
-/* eslint-disable func-names */
+/* eslint-disable no-restricted-globals */
 /* eslint-disable consistent-return */
 import './style.css';
 import logo from './assets/R&M-logo.png';
@@ -47,7 +47,7 @@ const render = async (renderLike) => {
     <div class="reserv"><button class="btn">Reservation</button></div>`;
     list.appendChild(li);
   });
-  incrementLike(document.querySelectorAll('.fas'));
+  incrementLike(document.querySelectorAll('.fas'), renderLike);
   [...document.querySelectorAll('.btn')].forEach((elem) => {
     elem.addEventListener('click', () => {
       document.querySelector('main').append(createPopup(items[elem.id - 1]));
