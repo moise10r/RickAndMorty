@@ -43,7 +43,7 @@ To run this application locally :
 
 - `npm run start`
 
-And then open your browser on the port 9000
+And then open your browser on the port 8080
 
 
 ## Authors
