@@ -31,11 +31,11 @@ const render = async () => {
         </span>
       </div>
     </div>
-    <div class="comment"><button id='${item.id}' class="btn">Comment</button></div>
+    <div class="comment"><button id='${item.id}' class="comment-btn btn">Comment</button></div>
     <div class="reserv"><button class="btn">Reservation</button></div>`;
     list.appendChild(li);
   });
-  [...document.querySelectorAll('.btn')].forEach((elem) => {
+  [...document.querySelectorAll('.comment-btn')].forEach((elem) => {
     elem.addEventListener('click', async () => {
       document.querySelector('main').append(await createPopup(items[elem.id - 1], elem.id - 1));
     });
