@@ -119,23 +119,23 @@ const createCommentsWrapper = async (id) => {
 
 const createAddCommentSection = () => {
   const wrap = createElem('section', ['add-comment-section', 'flex', 'flex-col']);
-  wrap.innerHTML = `<article>
+  wrap.innerHTML = `<div class="container">
           <h3 class='text-center'>Add a comment</h3>
-        </article>
+        </div>
 
-        <article>
+        <div class="container">
           <input type='text' placeholder='Your name' class='name-inp'>
-        </article>
+        </div>
 
-        <article>
-          <textarea name="comment" id="comment" cols="30" rows="10" placeholder='Your comment here' class='comment-inp'>
+        <div class="container">
+          <textarea name="comment"  id="comment" cols="30" rows="10" placeholder='Your comment here' class='comment-inp'>
 
           </textarea>
-        </article>
+        </div>
 
-        <article>
+        <div class="container">
           <input type="button" value='Comment' class='add-comment-btn btn'>
-        </article>`;
+        </div>`;
   return wrap;
 };
 

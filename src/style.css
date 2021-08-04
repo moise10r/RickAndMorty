@@ -344,19 +344,20 @@ nav ul li:hover::after {
   margin: 1rem auto;
 }
 
-.add-comment-section article:nth-child(2),
-.add-comment-section article:nth-child(3) {
+.add-comment-section .container:nth-child(2),
+.add-comment-section .container:nth-child(3) {
   width: 70%;
 }
 
-.add-comment-section article:nth-child(2) input {
+.add-comment-section .container:nth-child(2) input {
   margin-top: 1rem;
 }
 
-.add-comment-section article:nth-child(2) input,
-.add-comment-section article:nth-child(3) textarea {
+.add-comment-section .container:nth-child(2) input,
+.add-comment-section .container:nth-child(3) textarea {
   padding: 1rem 1rem;
   width: 100%;
+  font-size: 1rem;
 }
 
 .popup::-webkit-scrollbar {
