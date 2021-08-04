@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { getComment} from './controllers';
+import { getComment } from './controllers';
 
 const createElem = (tag, cl) => {
   const elem = document.createElement(tag);
