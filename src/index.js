@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable consistent-return */
 import './style.css';
@@ -10,10 +11,7 @@ const img = document.createElement('img');
 img.src = logo;
 logoWrapper.append(img);
 
-const itemCounter = (characters) => {
-  const count = document.querySelector('#char-count');
-  count.innerHTML = `(${characters.length})`;
-};
+const itemCounter = (characters) => characters.length;
 
 const incrementLike = (likesBtn) => {
   likesBtn.forEach((btn) => {
@@ -60,6 +58,7 @@ const render = async (renderLike) => {
   });
 };
 
+const count = document.querySelector('#char-count');
 window.addEventListener('load', async () => {
   const likes = [...await getLikes()];
   const renderLike = (item) => {
@@ -73,5 +72,5 @@ window.addEventListener('load', async () => {
   };
   render(renderLike);
   const characters = await getCharacters();
-  itemCounter(characters);
+  count.innerHTML = `(${itemCounter(characters)})`;
 });
