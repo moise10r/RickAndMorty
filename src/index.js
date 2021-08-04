@@ -2,13 +2,23 @@
 /* eslint-disable consistent-return */
 import './style.css';
 import logo from './assets/R&M-logo.png';
-import { getCharacters, getLikes } from './controllers';
+import { getCharacters, getLikes, postLike } from './controllers';
 import { createPopup } from './popup';
 
 const logoWrapper = document.querySelector('.logo');
 const img = document.createElement('img');
 img.src = logo;
 logoWrapper.append(img);
+
+const incrementLike = (likesBtn) => {
+  likesBtn.forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      await postLike({
+        item_id: btn.dataset.name,
+      });
+    });
+  });
+};
 
 let items = [];
 const render = async (renderLike) => {
@@ -25,7 +35,7 @@ const render = async (renderLike) => {
     <div class="like-content flex">
       <div class="title">${item.name}</div>
       <div class="like flex">
-      <span><i class="fas fa-heart"></i></span>
+      <span><i id='${item.id}' data-name='${item.name}' class="fas fa-heart"></i></span>
       <span>
           <span>Like</span>
           <span>${renderLike(item)}</span>
@@ -36,6 +46,7 @@ const render = async (renderLike) => {
     <div class="reserv"><button class="btn">Reservation</button></div>`;
     list.appendChild(li);
   });
+  incrementLike(document.querySelectorAll('.fas'));
   [...document.querySelectorAll('.btn')].forEach((elem) => {
     elem.addEventListener('click', () => {
       document.querySelector('main').append(createPopup(items[elem.id - 1]));
