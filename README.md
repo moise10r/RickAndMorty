@@ -14,7 +14,7 @@ APIs used:
 - [Involvement-API](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270)
 
 ## Live demo
-[See Project](https://moise10r.github.io/leaderboard-app/dist/)
+[See Project](https://simongrchevski.github.io/js-capstone/)
 
 ## Built With
 
@@ -43,7 +43,7 @@ To run this application locally :
 
 - `npm run start`
 
-And then open your browser on the port 9000
+And then open your browser on the port 8080
 
 
 ## Authors

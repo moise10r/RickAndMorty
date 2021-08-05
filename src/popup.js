@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { getComment, postComment } from './controllers';
+import { getCommentsCounter } from './utils';
 
 const createElem = (tag, cl) => {
   const elem = document.createElement(tag);
@@ -102,7 +103,7 @@ const createCommentsWrapper = async (id) => {
   if (!Array.isArray(comments)) comments = [];
   const elem = createElem('article', ['flex', 'flex-col', 'comment-wrapper']);
   elem.innerHTML = `<div class='text-center padding-20'>
-        <h3>Comments (<span class='comments-count'>${comments.length}</span>)</h3>
+        <h3>Comments (<span class='comments-count'>${getCommentsCounter(comments)}</span>)</h3>
       </div>`;
 
   const ul = createElem('ul', ['flex', 'flex-col', 'comments-ul']);
