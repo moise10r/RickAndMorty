@@ -75,7 +75,7 @@ Give a ⭐️ if you like this project!❤️❤️❤️
 ## Acknowledgments
 
 - Microverse
-- [Rick and Morty API](https://rickandmortyapi.com/documentation
+- [Rick and Morty API](https://rickandmortyapi.com/documentation)
 - [Involvement API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270)
 
 ## 📝 License
