@@ -11,6 +11,7 @@ export const post = async (url, endPoint, body) => {
     body,
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
+      'Access-Control-Allow-Origin': 'http://localhost:8080/',
     },
   });
   return result;
