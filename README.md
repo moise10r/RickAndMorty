@@ -22,6 +22,10 @@ APIs used:
 - CSS
 - Html
 
+This is the video that I and my partner recorded for this project: 
+
+- [Video Link](https://drive.google.com/file/d/1ZuysKZjdA84rTHmPnzlqc8lekO4IIGDY/view?usp=sharing)
+
 ## Getting Started
 
 **To get the local copy of the project up and running you will need to run the following commands on your terminal:**
