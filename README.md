@@ -72,3 +72,13 @@ Feel free to check the [issues page](https://github.com/moise10r/Awesome_Book/is
 
 Give a ⭐️ if you like this project!❤️❤️❤️
 
+## Acknowledgments
+
+- Microverse
+- [Rick and Morty API](https://rickandmortyapi.com/documentation
+- [Involvement API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270)
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
+
