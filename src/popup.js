@@ -39,8 +39,8 @@ const createDate = () => {
 const updateComments = () => {
   const ul = wrapper.querySelector('.comments-ul');
   const li = document.createElement('li');
-  const comment = comments[comments.length - 1];
   const date = createDate();
+  const comment = comments[comments.length - 1];
   li.innerHTML = `<span class='comment-date'>${date}</span>
     <span class='comment-user'>${comment.username}: </span>
     <span class='comment-comment'>${comment.comment}</span>`;
