@@ -1,5 +1,4 @@
-import itemCounter from '../src/utils';
-import { getCommentsCounter } from '../src/utils';
+import itemCounter, { getCommentsCounter } from '../src/utils';
 
 it('should return a length greather than 0', () => {
   const items = [
@@ -15,8 +14,8 @@ it('should return a length of the comments to be greater then 0', () => {
   const items = [
     {
       comment: 'This is nice!',
-      creation_date: "2021-01-10",
-      username: "John"
+      creation_date: '2021-01-10',
+      username: 'John',
     },
   ];
   const result = getCommentsCounter(items);
